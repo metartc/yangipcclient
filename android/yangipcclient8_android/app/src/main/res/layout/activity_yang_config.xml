@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".YangConfigActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/m_b_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:text="保存"></Button>
+
+        <Button
+            android:id="@+id/m_b_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:text="取消"></Button>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/mqttServer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mqttServer"
+            />
+        <EditText
+            android:id="@+id/m_t_serverTopic"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="serverTopic"
+            android:text="test1001"
+            android:textSize="14dp"></EditText>
+
+        <EditText
+            android:id="@+id/m_t_serverIp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="mqttServerIP"
+            android:text="47.121.123.178"
+            android:textSize="14dp"></EditText>
+
+        <EditText
+            android:id="@+id/m_t_port"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="mqttServerPort"
+            android:text="1883"
+            android:textSize="14dp"></EditText>
+        <EditText
+            android:id="@+id/m_t_mqttUsername"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="mqttUsername"
+            android:text=""
+            android:textSize="14dp"></EditText>
+
+        <EditText
+            android:id="@+id/m_t_mqttPassword"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="mqttPassword"
+            android:text=""
+            android:textSize="14dp"></EditText>
+
+        <TextView
+            android:id="@+id/iceServer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/iceServer"
+            />
+        <EditText
+            android:id="@+id/m_t_iceServerIp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="coturnServerIP"
+            android:text="47.121.123.178"
+            android:textSize="14dp"></EditText>
+
+        <EditText
+            android:id="@+id/m_t_icePort"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="CotunrPort"
+            android:text="3478"
+            android:textSize="14dp"></EditText>
+        <EditText
+            android:id="@+id/m_t_iceUsername"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="iceUsername"
+            android:text="metartc"
+            android:textSize="14dp"></EditText>
+
+        <EditText
+            android:id="@+id/m_t_icePassword"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="icePassword"
+            android:text="metartc"
+            android:textSize="14dp"></EditText>
+    </LinearLayout>
+</LinearLayout>
