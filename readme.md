@@ -1,7 +1,7 @@
 # yangipcclient
 
 yangipcclient是一个为IPC(Internet Protocol Camera)应用提供多平台的客户端。  
-提供了android/ios/浏览器/win/mac/linux六种平台的sdk和demo。  
+提供了android/ios/浏览器/win/mac/linux/react native七种平台的sdk和demo。  
 SDK基于metaRTC8.0开发，默认信令可直接对接metaIPC2.0/metaIPC3.0  
 android/ios demo为原生demo，win/mac/linux demo为qt demo。  
 
