@@ -1,0 +1,42 @@
+{
+  "name": "yang-opengl-view",
+  "id": "yang-opengl-view",
+  "version": "1.0.0",
+  "description": "Custom OpenGL view plugin with YangClient AAR",
+  "_dp_nativeplugin": {
+    "android": {
+      "plugins": [
+        {
+          "type": "module",
+          "name": "yang-opengl-view",
+          "class": "com.metartc.ipcclient.YangViewPlugin"
+        }
+      ],
+	  "integrateType":"aar",
+	  "minSdkVersion": 29,
+	  "permissions": [
+	          "android.permission.RECORD_AUDIO"
+	    ]
+    },
+    "ios": {
+      "plugins": [
+		  {
+		    "type": "module",
+		    "name": "yang-opengl-view",
+		    "class": "YangViewPlugin"
+		  }
+	  ],
+	  "integrateType":"framework",
+		"frameworks": ["AVFoundation.framework","CoreAudio.framework"],
+	    "deploymentTarget": "15.6"
+    }
+  },
+  "nativePlugins": {
+      "ios": {
+        "frameworks": ["yangclient8"],
+        "embedFrameworks": true,
+        "systemFrameworks": ["AVFoundation", "CoreAudio"],
+        "deploymentTarget": "15.6"
+      }
+    }
+}

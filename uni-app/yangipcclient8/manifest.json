@@ -1,0 +1,66 @@
+{
+    "name" : "yangipcclient8",
+    "appid" : "__UNI__18FADF9",
+    "description" : "",
+    "versionName" : "1.0.0",
+    "versionCode" : "100",
+    "vueVersion" : "2",
+    "app-plus" : {
+        "nvueStyleCompiler" : "uni-app",
+        "compilerVersion" : 3,
+        "usingComponents" : true,
+        "modules" : {},
+        "nativePlugins" : {
+            "yang-opengl-view" : {
+                "__plugin_info__" : {
+                    "name" : "yang-opengl-view",
+                    "description" : "Custom OpenGL view plugin with YangClient AAR",
+                    "platforms" : "Android,iOS",
+                    "url" : "",
+                    "android_package_name" : "com.metartc.ipcclient",
+                    "ios_bundle_id" : "",
+                    "isCloud" : false,
+                    "bought" : -1,
+                    "pid" : "",
+                    "parameters" : {}
+                }
+            }
+        },
+        "distribute" : {
+            "android" : {
+                "package" : "com.yangipcclient8",
+                "appName" : "yangipcclient8",
+                "permissions" : [
+                    "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />"
+                ],
+                "minSdkVersion" : 29
+            },
+            "ios" : {
+                "bundleId" : "com.yangipcclient8",
+                "appName" : "yangipcclient8",
+				"dSYMs": false,
+				"idfa": false,
+				"ui": {
+					"statusbar": {
+						"style": "dark",
+						"background": "#FFFFFF"
+					},
+					"launchscreen": {
+						"background": "#FFFFFF"
+					}
+				},
+				"wkwebview": {
+					"allowsInlineMediaPlayback": true,
+					"mediaTypesRequiringUserActionForPlayback": false
+				},
+                "privacyDescription" : {
+                    "NSMicrophoneUsageDescription" : "系统需要使用麦克风",
+                    "NSLocalNetworkUsageDescription" : "系统需要使用本地网络"
+                }
+            }
+        }
+    }
+}
