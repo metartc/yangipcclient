@@ -1,6 +1,0 @@
-framework module yangipclient8_ios {
-  umbrella header "yangipclient8_ios.h"
-  export *
-
-  module * { export * }
-}
