@@ -1,0 +1,6 @@
+framework module yangclient8 {
+  umbrella header "yangclient8.h"
+  export *
+
+  module * { export * }
+}
