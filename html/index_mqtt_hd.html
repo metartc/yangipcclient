@@ -92,10 +92,6 @@ function yang_get_sfuUrl(){
 			if(yang_playType==1){
 			return "file://"+yang_queryTime;
 		}
-		//var yurl=yang_url_parse($("#txt_url").val());
-		// var yport=yurl.port;
-       // if(yang_mediaServerType==Yang_ConnectType_Zlm&&yport==1985) yport=80;
-		//return "webrtc://"+yurl.server+":"+yport+"/"+yurl.app+"/"+yurl.stream;
 		return "webrtc://";
 }
 $(function(){
@@ -124,10 +120,8 @@ $(function(){
 	}	
 	
     var startPlay = function() {     
-		
         // Close PC when user replay.
         if (sdk) {
-		
             sdk.close();
         }
 
