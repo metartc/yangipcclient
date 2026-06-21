@@ -20,7 +20,7 @@
     <script type="text/javascript" src="js/adapter-7.4.0.min.js"></script>
 	<script type="text/javascript" src="js/ipc_hd.mqtt.sdk.js"></script>
     <script type="text/javascript" src="js/winlin.utility.js"></script>
-    <script type="text/javascript" src="js/srs.page.js"></script>
+    <script type="text/javascript" src="js/yangpage.js"></script>
   
   
 </head>
@@ -92,6 +92,10 @@ function yang_get_sfuUrl(){
 			if(yang_playType==1){
 			return "file://"+yang_queryTime;
 		}
+		//var yurl=yang_url_parse($("#txt_url").val());
+		// var yport=yurl.port;
+       // if(yang_mediaServerType==Yang_ConnectType_Zlm&&yport==1985) yport=80;
+		//return "webrtc://"+yurl.server+":"+yport+"/"+yurl.app+"/"+yurl.stream;
 		return "webrtc://";
 }
 $(function(){
@@ -111,7 +115,14 @@ $(function(){
 				credential: $("#txt_turnPassword").val()
 			}
 		];
-		 yang_url = yang_get_sfuUrl();
+		//console.log("yang_mediaServerType===>"+yang_mediaServerType);
+		  //var mstype=$("input[name='meidaServer']:checked").val();
+		 // setMediaServer(parseInt(mstype));
+		
+		  yang_url = yang_get_sfuUrl();
+		  //console.log("yang_url:"+yang_url);
+		 // console.log("yang_mediaServerType=="+yang_mediaServerType);
+		 // console.log("yang_url=="+yang_url);
 		 if(yang_client&&yang_client.isConnected()){			
 			sendLoginMsg();
 		 }else{
@@ -120,12 +131,14 @@ $(function(){
 	}	
 	
     var startPlay = function() {     
+		
         // Close PC when user replay.
         if (sdk) {
+		
             sdk.close();
         }
 
-        sdk = new SrsRtcPlayerAsync();
+        sdk = new YangRtcPlayerAsync();
 
         // https://webrtc.org/getting-started/remote-streams
         $('#rtc_media_player').prop('srcObject', sdk.stream);
@@ -188,8 +201,8 @@ function yang_answerPlay(remoteSdp){
             sdk.close();
         }
      
-        sdk = new SrsRtcPlayerAsync();       
- 
+        sdk = new YangRtcPlayerAsync();       
+		$('#rtc_media_player').prop('srcObject', sdk.stream);
         sdk.answerPlay(remoteSdp);
 	}
 	
@@ -197,22 +210,22 @@ function yang_startPlayP2p(){
 		if (sdk) {
             sdk.close();
         }
-        sdk = new SrsRtcPlayerAsync();
+        sdk = new YangRtcPlayerAsync();
         $('#rtc_media_player').prop('srcObject', sdk.stream);
         sdk.playP2p();
 }
 
-function yang_startPlaySrs(){
+function yang_startPlayYang(){
 		if (sdk) {
             sdk.close();
         }
-        sdk = new SrsRtcPlayerAsync();
+        sdk = new YangRtcPlayerAsync();
 
         // https://webrtc.org/getting-started/remote-streams
         $('#rtc_media_player').prop('srcObject', sdk.stream);
             var url = $("#txt_url").val();
        // parse_webrtc(url);
-        sdk.playSrs(url).then(function(session){
+        sdk.playYang(url).then(function(session){
 			 console.log("play url ",$("#txt_url").val());
 			 $('#datachannel_form').show();
         }).catch(function (reason) {
@@ -225,7 +238,7 @@ function yang_startPlayZlm(){
 		if (sdk) {
             sdk.close();
         }
-        sdk = new SrsRtcPlayerAsync();
+        sdk = new YangRtcPlayerAsync();
 
         // https://webrtc.org/getting-started/remote-streams
         $('#rtc_media_player').prop('srcObject', sdk.stream);
